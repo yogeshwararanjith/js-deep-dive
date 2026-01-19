@@ -57,7 +57,7 @@ function cachingDecoratorThis(func){
             return cache.get(x);
         }
 
-        let result = func.apply(this,x);
+        let result = func.call(this,x);
         cache.set(x,result);
         return result;
     }
