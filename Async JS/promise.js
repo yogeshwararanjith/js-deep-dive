@@ -24,19 +24,3 @@ function divide(a,b){
 divide(10,2).then((result)=>console.log(result)).catch((error)=>console.log(error));
 divide(10,0).then((result)=>console.log(result)).catch((error)=>console.log(error));
 
-
-
-// run function sequentially without setInterval using Recursive promise chaining
-
-function interval(ms){
-    return new Promise(resolve => {
-        setTimeout(()=>resolve('done'),ms)
-    })
-}
-
-const promiseLoop = (count, result=undefined)=>{
-    console.log(`${result} Task executed: ${count}s`);
-    return interval(1000).then(result=>  promiseLoop(count+1, result))
-}
-
-promiseLoop(1)
