@@ -1,9 +1,9 @@
 // Promise.all
 
-// let promise = Promise.all([
-//     new Promise((resolve,reject)=>setTimeout(()=>resolve(1),1000)),
-//     new Promise((resolve,reject)=>setTimeout(()=>resolve(2),2000))
-// ]).then(console.log)
+let promise = Promise.all([
+    new Promise((resolve,reject)=>setTimeout(()=>resolve(1),1000)),
+    new Promise((resolve,reject)=>setTimeout(()=>resolve(2),2000))
+]).then(console.log)
 
 
 const p1 = function(){
@@ -41,3 +41,18 @@ Promise.allSettled = function(promises){
     return Promise.all(convertedPromises);
 }
 
+
+// rejecting a promise if doesn't resolve at given ms
+function withTimeout(promise,ms){
+    console.log(promise)
+    // if we use Promise.any instead of race, it returns a promise that resolves as soon as the first promise is fulfills in iterable
+    // race returns the first promise that is settled(if resolved : status and value or if rejected : status and reason)
+    return Promise.race([
+        promise,
+        new Promise((resolve,reject)=>setTimeout(()=>reject('error timeout'),ms))
+    ])
+}
+
+// withTimeout(Promise.resolve(1),100).then(console.log).catch(console.error)
+
+withTimeout(new Promise((resolve)=>setTimeout(()=>resolve(1),150)),100).then(console.log).catch(console.error).finally(()=>console.log('Cleanup done'));
