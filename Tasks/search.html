@@ -1,0 +1,73 @@
+<!-- tells web browser which version of HTML the page is using -- Document type definition file -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- head tag is a container for metadata about the html Document, it provides info to browsers,
+search engines...This metadata helps with rendering, accessibility, SEO and functionality -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search with Debounce and Cache</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 400px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 24px;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        input[type="text"]:focus {
+            border-color: #4285f4;
+            box-shadow: 0 2px 8px rgba(66,133,244,0.3);
+        }
+        .card{
+            width: 400px;
+            padding: 10px;
+            font-size: 16px;
+            border-top: none;
+        }
+        .user-card {
+        width: 400px;
+        padding: 15px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .user-card h3 {
+        margin: 0 0 10px 0;
+        color: #333;
+    }
+    .user-card p {
+        margin: 5px 0;
+        color: #666;
+    }
+    </style>
+</head>
+<body>
+    <h1>Search...</h1>
+    <!-- <input type="text" placeholder="Search..." > -->
+     <form name="search">
+        <input type="text" id="search" placeholder="Search..." inputmode="search" autocomplete="off" autofocus>
+     </form>
+     <div class="card">
+     </div>
+    <script src="./debounce.js"></script>
+</body>
+</html>
