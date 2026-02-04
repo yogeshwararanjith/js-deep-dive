@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+      <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .tab {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  background: #f1f1f1;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tab button.active {
+  background: blue;
+  color: white;
+}
+
+.panels p {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.panels p.active {
+  display: block;
+}
+      </style>
+  </head>
+  <body>
+    <div>
+      <div class="tab">
+        <button data-tab="tab-1">HTML</button>
+        <button data-tab="tab-2">CSS</button>
+        <button data-tab="tab-3">JavaScript</button>
+      </div>
+      <div class="panels">
+        <p data-panel="panel-1">
+          The HyperText Markup Language or HTML is the
+          standard markup language for documents designed to
+          be displayed in a web browser.
+        </p>
+        <p data-panel="panel-2">
+          Cascading Style Sheets is a style sheet language
+          used for describing the presentation of a document
+          written in a markup language such as HTML or XML.
+        </p>
+        <p data-panel="panel-3">
+          JavaScript, often abbreviated as JS, is a
+          programming language that is one of the core
+          technologies of the World Wide Web, alongside HTML
+          and CSS.
+        </p>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
