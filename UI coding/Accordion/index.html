@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+      <style>
+        body {
+  font-family: sans-serif;
+}
+
+.accordion-icon {
+  border: solid currentcolor;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  height: 8px;
+  pointer-events: none;
+  transform: translateY(-2px) rotate(45deg);
+  width: 8px;
+}
+
+.accordion-icon--rotated {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+.view p{
+    display: none;
+    padding-top: 10px;
+}
+
+.view p.active{
+    display: block;
+}
+
+</style>
+  </head>
+  <body>
+    <div >
+      <div>
+        <div>
+          HTML
+          <span data-accordion="accordion-1"
+            aria-hidden="true"
+            class="accordion-icon accordion-icon--rotated"></span>
+        </div>
+        <div class="view">
+        <p data-view="view-1">
+          The HyperText Markup Language or HTML is the
+          standard markup language for documents designed to
+          be displayed in a web browser.
+        </p>
+        </div>
+      </div>
+      <div>
+        <div>
+          CSS
+          <span data-accordion="accordion-2"
+            aria-hidden="true"
+            class="accordion-icon accordion-icon--rotated"></span>
+        </div>
+        <div class="view">
+        <p data-view="view-2">
+          Cascading Style Sheets is a style sheet language
+          used for describing the presentation of a document
+          written in a markup language such as HTML or XML.
+        </p>
+        </div>
+      </div>
+      <div>
+        <div>
+          JavaScript
+          <span data-accordion="accordion-3"
+            aria-hidden="true"
+            class="accordion-icon accordion-icon--rotated"></span>
+        </div>
+        <div class="view">
+        <p data-view="view-3">
+          JavaScript, often abbreviated as JS, is a
+          programming language that is one of the core
+          technologies of the World Wide Web, alongside HTML
+          and CSS.
+        </p>
+        </div>
+      </div>
+    </div>
+    <script src="accordion.js"></script>
+  </body>
+</html>
